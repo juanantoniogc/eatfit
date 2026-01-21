@@ -1,7 +1,10 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark border-bottom border-body">
     <div class="container-fluid">
-        <a class="navbar-brand patua-one fs-1 ms-3" href="#">
-            <span class="eatfit-e">E</span>at<span class="eatfit-f">F</span>it</a>
+        <a class="navbar-brand patua-one fs-1 ms-3" routerLink="/home"
+            [ngClass]="{'btn-outline-light': botonActivo === 'inicio', 'btn-light': botonActivo !== 'inicio'}"
+            (click)="setActiveButton('inicio')">
+            <span class="eatfit-e">E</span>at<span class="eatfit-f">F</span>it
+        </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
             aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -9,31 +12,37 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mx-auto mb-2 mb-lg-0 d-flex gap-3 justify-content-center poppins">
                 <li class="nav-item">
-                    <button type="button" class="btn btn-outline-light px-4" style="min-width: 110px;">
+                    <button type="button" routerLink="/inicio" class="btn"
+                        [ngClass]="{'btn-outline-light': botonActivo === 'inicio', 'btn-light': botonActivo !== 'inicio'}"
+                        (click)="setActiveButton('inicio')" style="min-width: 110px;">
                         Inicio
                     </button>
                 </li>
                 <li class="nav-item">
-                    <button type="button" class="btn btn-light px-4" style="min-width: 110px;">
+                    <button type="button" routerLink="/entreno" class="btn"
+                        [ngClass]="{'btn-outline-light': botonActivo === 'entreno', 'btn-light': botonActivo !== 'entreno'}"
+                        (click)="setActiveButton('entreno')" style="min-width: 110px;">
                         Entreno
                     </button>
                 </li>
                 <li class="nav-item">
-                    <button type="button" class="btn btn-light px-4" style="min-width: 110px;">
+                    <button type="button" routerLink="/comida" class="btn"
+                        [ngClass]="{'btn-outline-light': botonActivo === 'comida', 'btn-light': botonActivo !== 'comida'}"
+                        (click)="setActiveButton('comida')" style="min-width: 110px;">
                         Comida
                     </button>
                 </li>
                 <li class="nav-item">
-                    <button type="button" class="btn btn-light px-4" style="min-width: 110px;">
+                    <button type="button" routerLink="/perfil" class="btn"
+                        [ngClass]="{'btn-outline-light': botonActivo === 'perfil', 'btn-light': botonActivo !== 'perfil'}"
+                        (click)="setActiveButton('perfil')" style="min-width: 110px;">
                         Perfil
                     </button>
                 </li>
             </ul>
-
         </div>
-   <div class="navbar-brand fs-1 ms-3 invisible d-none d-lg-block order-lg-3">
-      <span>EatFit</span>
-    </div>
-
+        <div class="navbar-brand fs-1 ms-3 invisible d-none d-lg-block order-lg-3">
+            <span>EatFit</span>
+        </div>
     </div>
 </nav>
