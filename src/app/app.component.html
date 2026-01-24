@@ -1,13 +1,10 @@
-<!-- <div class="container-main">
-  <app-navbar></app-navbar>
-  
+<!--@if (!isAuthenticated) {
 
-  <div class="router-content">
-    <router-outlet></router-outlet>
-  </div>
-  
-  <app-footer></app-footer>
-</div>
-<app-signin></app-signin> -->
+  <app-signin></app-signin>
+} @else {
+Si SÍ está logueado, muestra la app completa -->
 
-<app-signin></app-signin>
+
+      <router-outlet></router-outlet>
+
+<!-- }-->

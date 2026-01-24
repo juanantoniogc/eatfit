@@ -1,10 +1,12 @@
-import { Component } from '@angular/core';
-import { RouterLink, RouterOutlet } from '@angular/router';
+import { Component, inject } from '@angular/core';
+import { Router, RouterLink, RouterOutlet } from '@angular/router';
 import { NavbarComponent } from './componente/navbar/navbar.component';
 import { InicioComponent } from './componente/inicio/inicio.component';
 import { CommonModule } from '@angular/common';
 import { FooterComponent } from "./componente/footer/footer.component";
 import { SigninComponent } from "./componente/autenticacion/signin/signin.component";
+import { User } from '@angular/fire/auth';
+import { AuthService } from './services/auth.service.service';
 
 @Component({
   selector: 'app-root',
@@ -13,5 +15,19 @@ import { SigninComponent } from "./componente/autenticacion/signin/signin.compon
   styleUrl: './app.component.scss'
 })
 export class AppComponent {
-  title = 'eatfit';
+  title="eatfit"
+  private authService = inject(AuthService);
+  private router = inject(Router);
+  
+  userAuth: User | null = null;
+  
+  constructor() {
+    this.authService.getUserAuthenticated().subscribe((user: User | null) => {
+      this.userAuth = user;
+    });
+  }
+  
+  get isAuthenticated(): boolean {
+    return this.userAuth !== null;
+  }
 }
