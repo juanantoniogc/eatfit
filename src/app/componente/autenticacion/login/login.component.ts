@@ -42,9 +42,7 @@ export class LoginComponent {
     if (this.formLogin.email.length > 6) {
       this.authService.login(this.formLogin.email, this.formLogin.password)
         .then((user: UserCredential) => {
-          //TODO: Guardar en el Firebase Realtime Database los datos del usuario
-          this.routerService.navigate(['/inicio']); // cambia a /task si corresponde
-          console.log(user);
+          this.routerService.navigate(['/inicio']); 
         })
         .catch((error) => {
           console.log(error);

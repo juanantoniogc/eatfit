@@ -1,4 +1,10 @@
-<div *ngIf="isAuthenticated; else publicBlock" class="app-layout">
+<div *ngIf="isLoading" class="loading-container">
+  <div class="loading-text text-white">
+    <span class="eatfit-e">E</span><span>at</span><span class="naranja">F</span><span>it</span>
+  </div>
+</div>
+
+<div *ngIf="!isLoading && isAuthenticated; else publicBlock" class="app-layout">
   <app-navbar></app-navbar>
 
   <div class="app-content">
@@ -9,6 +15,5 @@
 </div>
 
 <ng-template #publicBlock>
-  <!-- SIN navbar/footer, PERO con router -->
   <router-outlet></router-outlet>
 </ng-template>

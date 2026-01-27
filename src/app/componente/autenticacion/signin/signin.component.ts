@@ -49,7 +49,6 @@ export class SigninComponent {
         this.router.navigate(['/inicio']);
       }).catch((error) => {
         console.error('Error en registro:', error);
-        // Aquí podrías mostrar un mensaje de error al usuario
       });
     }
   }

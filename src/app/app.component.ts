@@ -20,12 +20,17 @@ export class AppComponent implements OnInit, OnDestroy {
 
   user: User | null = null;
   isAuthenticated = false;
+  isLoading = true; // Variable que controla el estado de carga
 
   private sub?: Subscription;
 
   constructor(private authService: AuthService) {}
 
   ngOnInit(): void {
+    setTimeout(() => { // Esto simula el tiempo de carga (puedes ajustar este tiempo)
+      this.isLoading = false; // Detener la animación después de 3 segundos
+    }, 3000);
+
     this.sub = this.authService.getUserAuthenticated().subscribe((u) => {
       this.user = u;
       this.isAuthenticated = !!u;

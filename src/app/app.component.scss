@@ -12,3 +12,38 @@ html, body {
 .app-content {
   flex: 1;
 }
+
+@keyframes loadingAnimation {
+  0% {
+    opacity: 0;
+    transform: scale(0.5);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.2);
+  }
+  75% {
+    opacity: 1;
+    transform: scale(1.9);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(2);
+  }
+}
+
+.loading-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #1a1a1a;
+}
+
+.loading-text {
+  font-size: 4rem;
+  font-family: "Patua One", serif;
+  font-weight: bold;
+  animation: loadingAnimation 7s infinite;
+}
+
