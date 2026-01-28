@@ -2,29 +2,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Patua+One&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
 
-html, body {
-  height: 100%;
-  margin: 0;
-}
 
-.container-main {
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh; 
-}
-
-.router-content {
-  flex: 1;
-}
 
 .patua-one {
   font-family: "Patua One", serif;
 }
-.eatfit-e {
+.verde {
   color: #85FF70; 
 }
-
-
 
 .poppins {
     font-family: 'Poppins', sans-serif;

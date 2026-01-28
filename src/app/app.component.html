@@ -1,13 +1,13 @@
-<div *ngIf="isLoading" class="loading-container">
+<div *ngIf="isLoading" class="d-flex justify-content-center align-items-center vh-100 bg-dark">
   <div class="loading-text text-white">
-    <span class="eatfit-e">E</span><span>at</span><span class="naranja">F</span><span>it</span>
+    <span class="verde">E</span><span>at</span><span class="naranja">F</span><span>it</span>
   </div>
 </div>
 
-<div *ngIf="!isLoading && isAuthenticated; else publicBlock" class="app-layout">
+<div *ngIf="!isLoading && isAuthenticated; else publicBlock" class="app-layout d-flex flex-column min-vh-100">
   <app-navbar></app-navbar>
 
-  <div class="app-content">
+  <div class="app-content flex-fill">
     <router-outlet></router-outlet>
   </div>
 

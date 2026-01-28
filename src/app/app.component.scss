@@ -1,16 +1,8 @@
-html, body {
-  height: 100%;
-  margin: 0;
-}
-
-.app-layout {
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-}
-
-.app-content {
-  flex: 1;
+.loading-text {
+  font-size: 4rem;
+  font-weight: bold;
+  animation: loadingAnimation 7s infinite;
+  font-family: "Patua One", serif;
 }
 
 @keyframes loadingAnimation {
@@ -31,19 +23,3 @@ html, body {
     transform: scale(2);
   }
 }
-
-.loading-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  background-color: #1a1a1a;
-}
-
-.loading-text {
-  font-size: 4rem;
-  font-family: "Patua One", serif;
-  font-weight: bold;
-  animation: loadingAnimation 7s infinite;
-}
-

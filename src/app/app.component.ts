@@ -17,19 +17,19 @@ import { LoginComponent } from "./componente/autenticacion/login/login.component
   styleUrl: './app.component.scss'
 })
 export class AppComponent implements OnInit, OnDestroy {
-
+  title="eatfit"
   user: User | null = null;
   isAuthenticated = false;
-  isLoading = true; // Variable que controla el estado de carga
+  isLoading = true; 
 
   private sub?: Subscription;
 
   constructor(private authService: AuthService) {}
 
-  ngOnInit(): void {
-    setTimeout(() => { // Esto simula el tiempo de carga (puedes ajustar este tiempo)
-      this.isLoading = false; // Detener la animación después de 3 segundos
-    }, 3000);
+ngOnInit(): void {
+    setTimeout(() => { 
+      this.isLoading = false;
+    }, 3000); 
 
     this.sub = this.authService.getUserAuthenticated().subscribe((u) => {
       this.user = u;
@@ -37,7 +37,8 @@ export class AppComponent implements OnInit, OnDestroy {
 
       console.log('AUTH STATE =>', u ? 'LOGUEADO' : 'NO LOGUEADO', u);
     });
-  }
+}
+
 
   ngOnDestroy(): void {
     this.sub?.unsubscribe();
